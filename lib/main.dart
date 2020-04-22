@@ -1,7 +1,9 @@
 import 'dart:convert';
+import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapiapp/StringName.dart';
 import 'package:http/http.dart' as http;
 
 void main() => runApp(new MaterialApp(
@@ -17,8 +19,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>  {
 
+
   @override
   Widget build(BuildContext context) {
+
+   Future <StringName> fetchStringName() async {
+     final response = await http.get('https://jsonplaceholder.typicode.com/users');
+     
+
+   }
 
     return Scaffold (
       appBar: AppBar(
@@ -29,36 +38,24 @@ class _HomePageState extends State<HomePage>  {
             return Card (
               child: Padding(
                 padding: const EdgeInsets.only(top: 23.0, bottom: 23.0, left: 16.0, right: 16.0),
-               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Icon(
-                        Icons.person,
-                        size: 50.0,
-                        color: Colors.blueAccent,
-                      ),
-                Column (
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text("name",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold
                       ),
                     ),
-                    Text("email",
-                      style: TextStyle(
-                        color: Colors.grey.shade600,
-                        fontWeight: FontWeight.normal,
-                      ),
+                    Text("name",
+                    style: (TextStyle(
+                      color: Colors.grey.shade600,
+                    )),
                     ),
                   ],
                 ),
 
-
-
-                ],
-              ),
               ),
             );
           },
