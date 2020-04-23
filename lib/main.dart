@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapiapp/info.dart';
 import 'package:http/http.dart' as http;
 
 void main() => runApp(new MaterialApp(
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage>  {
                     color: Colors.blueAccent,
                   ),
                   Column (
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(data[index]["name"],
                         style: TextStyle(
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage>  {
                   /*InkWell (
                     onTap: () {
                       Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MoreInfo()),
+                      MaterialPageRoute(builder: (context) => Info()),
                       );
                     },
                   ),*/
