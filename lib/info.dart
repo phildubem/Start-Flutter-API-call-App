@@ -10,7 +10,7 @@ class Info extends StatelessWidget {
         title: Text("More Details"),
       ),
       body: Center (
-        child: Text(" "),
+        child: Text(""),
       ),
     );
   }
