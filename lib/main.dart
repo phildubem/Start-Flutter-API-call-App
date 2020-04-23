@@ -56,7 +56,18 @@ class _HomePageState extends State<HomePage>  {
       body: ListView.builder(
         itemBuilder: (context,index) {
           return Card (
-            child: Padding(
+            child: InkWell (
+              onTap: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Info(),
+                    settings: RouteSettings(
+                      arguments: data[index],
+                    ),
+                  ),
+                );
+              },
+
+             child: Padding(
               padding: const EdgeInsets.only(top: 23.0, bottom: 23.0, left: 16.0, right: 16.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,13 +97,18 @@ class _HomePageState extends State<HomePage>  {
                   /*InkWell (
                     onTap: () {
                       Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Info()),
+                      MaterialPageRoute(builder: (context) => Info(),
+                      settings: RouteSettings(
+                      arguments: data[index],
+                          ),
+                       ),
                       );
                     },
                   ),*/
                 ],
               ),
             ),
+           ),
           );
         },
         itemCount: data == null ? 0 : data.length,
