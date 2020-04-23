@@ -9,6 +9,9 @@ class Info extends StatelessWidget {
       appBar: AppBar(
         title: Text("More Details"),
       ),
+      body: Center (
+        child: Text(""),
+      ),
     );
   }
 
