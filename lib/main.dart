@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage>  {
             future: fetchInfo(),
             builder: (BuildContext context, AsyncSnapshot phil) {
               return ListView.builder(
-                itemBuilder: (context,index) {
+                itemBuilder: (context, index) {
                   return Card (
                     child: InkWell (
                       onTap: () {
